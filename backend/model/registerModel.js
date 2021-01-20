@@ -3,10 +3,11 @@ const Schema = mongoose.Schema;
 
 
 const registerSchema = new Schema({
-    fname: { type: String, minlength: 2, maxlength: 15 },
-    lname: { type: String, minlength: 2, maxlength: 15 },
-    email: { type: String, unique: true },
-    password: { type: String, minlength: 4 }
+    fname: { type: String },
+    lname: { type: String },
+    email: { type: String, required: true, unique: true },
+    password: { type: String },
+    profileImg: { type: String }
 })
 
 const RegisterModel = mongoose.model('register', registerSchema)
